@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles – KeychainBTC</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #fff; color: #1a1a1a; margin: 0; padding: 0; }
+    header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    nav a { margin-left: 1rem; text-decoration: none; color: #1a1a1a; font-weight: 500; }
+    nav a:hover { color: #F7931A; }
+    .container { max-width: 800px; margin: auto; padding: 2rem; }
+    h1 { text-align: center; color: #F7931A; margin-bottom: 2rem; }
+    article { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem; }
+    article h2 { margin-bottom: 0.5rem; }
+    .btn-back { display: inline-block; margin-top: 2rem; background: #F7931A; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; }
+    footer { text-align: center; padding: 1rem; font-size: 0.875rem; background: #f5f5f7; margin-top: 4rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><strong>KeychainBTC</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Bitcoin Articles</h1>
+
+    <article>
+      <h2>What is Bitcoin, really? A friendly guide</h2>
+      <p>Bitcoin is a digital currency invented in 2009 by an unknown person using the name Satoshi Nakamoto. It allows people to send money over the internet without relying on banks or governments. Here’s how it works in plain English…</p>
+    </article>
+
+    <article>
+      <h2>What is the Blockchain and How Do Keys Work?</h2>
+      <p>The blockchain is like a big, public notebook that anyone can read. Every time someone sends or receives Bitcoin, a new line is added to this notebook. To keep things secure, people use private keys to sign transactions and public keys to receive them…</p>
+    </article>
+
+    <a href="index.html" class="btn-back">← Back to Home</a>
+  </main>
+  <footer>
+    © <span id="year"></span> KeychainBTC — All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
