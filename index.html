@@ -7,7 +7,7 @@
   <meta name='description' content='KeychainBTC is your friendly guide to understanding Bitcoin easily and safely.'>
   <style>
      :root {
-       --primary: #F7931A; /* Bitcoin orange */
+       --primary: #F7931A;
        --dark: #1a1a1a;
        --light: #ffffff;
        --gray: #f5f5f7;
@@ -28,22 +28,19 @@
      .btn:hover{opacity:.85;}
      .newsletter{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;}
      .newsletter input[type=email]{padding:.75rem;border:1px solid #ccc;border-radius:6px;font-size:1rem;flex:1;}
-     .blog-list article{margin-bottom:2rem;border-bottom:1px solid #e5e5e5;padding-bottom:1.5rem;}
+     .hero-image{width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:2rem;}
      footer{background:var(--gray);padding:1rem 2rem;text-align:center;font-size:.875rem;margin-top:4rem;}
-     .article-full{background:#fff;border-radius:8px;padding:2rem;box-shadow:0 2px 6px rgba(0,0,0,0.05);margin-top:2rem;}
-     .article-full h3{font-size:1.4rem;margin-bottom:1rem;}
   </style>
 </head>
 <body>
   <header>
-    <a href='#' class='logo'>
-      <!-- simple house + BTC logo -->
+    <a href='index.html' class='logo'>
       <svg viewBox='0 0 24 24'><path d='M12 2l9 6v12a2 2 0 0 1-2 2h-5v-7h-4v7H5a2 2 0 0 1-2-2V8l9-6z'/><text x='12' y='16' text-anchor='middle' font-size='8' font-family='monospace' fill='#fff'>₿</text></svg>
       KeychainBTC
     </a>
     <nav>
-      <a href='#home'>Home</a>
-      <a href='#blog'>Blog</a>
+      <a href='index.html'>Home</a>
+      <a href='articles.html'>Articles</a>
       <a href='#about'>About</a>
       <a href='#contact'>Contact</a>
     </nav>
@@ -51,10 +48,11 @@
 
   <main>
     <section id='home'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2560px-Bitcoin.svg.png' alt='Bitcoin Hero' class='hero-image'>
       <h1>Bitcoin made simple — neighbor to neighbor</h1>
       <p style='text-align:center;'>Your friendly guide to understanding Bitcoin without the jargon. Learn at your own pace with clear, concise articles and resources.</p>
       <div class='cta'>
-        <a href='#blog' class='btn'>Start Learning</a>
+        <a href='articles.html' class='btn'>Want to Learn More?</a>
       </div>
       <div class='newsletter'>
         <h2>Join the Newsletter</h2>
@@ -63,36 +61,6 @@
           <input type='email' name='EMAIL' placeholder='Your email address' required>
           <button type='submit' class='btn'>Subscribe</button>
         </form>
-      </div>
-    </section>
-
-    <section id='blog'>
-      <h2>Latest Articles</h2>
-      <div class='blog-list'>
-        <article>
-          <h3><a href='#article1'>What is Bitcoin, really? A friendly guide</a></h3>
-          <p>Bitcoin is a form of digital money that isn’t controlled by any single bank or government. Here’s how it works in plain English…</p>
-          <a href='#article1' class='btn' style='font-size:.9rem;'>Read More</a>
-        </article>
-        <article>
-          <h3><a href='#article2'>What is the Blockchain and How Do Keys Work?</a></h3>
-          <p>The blockchain is like a public notebook, and private/public keys are how you sign and lock what you write in it. Here's the simple breakdown…</p>
-          <a href='#article2' class='btn' style='font-size:.9rem;'>Read More</a>
-        </article>
-      </div>
-      <div class='article-full' id='article1'>
-        <h3>What is Bitcoin, really? A friendly guide</h3>
-        <p>Bitcoin is a digital currency invented in 2009 by an unknown person using the name Satoshi Nakamoto. It allows people to send money over the internet without relying on banks or governments. It’s secure, borderless, and scarce — only 21 million will ever exist.</p>
-        <p>At its core, Bitcoin runs on a decentralized network of computers. These computers validate transactions and keep the system running. You can store Bitcoin in a digital wallet and use it to pay, save, or transfer value globally — kind of like email for money.</p>
-        <p>It might seem complicated, but KeychainBTC is here to break it down — neighbor to neighbor.</p>
-      </div>
-      <div class='article-full' id='article2'>
-        <h3>What is the Blockchain and How Do Keys Work?</h3>
-        <p>The blockchain is like a big, public notebook that anyone can read. Every time someone sends or receives Bitcoin, a new line is added to this notebook. This notebook isn’t stored in one place — it lives on thousands of computers at once. That’s what makes it “decentralized.”</p>
-        <p>Now, to make sure only you can write in your spot of the notebook, you use something called a <strong>private key</strong>. Think of it like a secret password. Your private key is used to sign your Bitcoin transactions so that everyone knows it came from you.</p>
-        <p>There's also a <strong>public key</strong>, which is like your Bitcoin address. People can send you Bitcoin using this public key, but they can’t access or spend it — only your private key can do that.</p>
-        <p>So: <em>Public key = your mailbox. Private key = your house key.</em> Anyone can drop something in your mailbox, but only you can open it and take things out.</p>
-        <p>KeychainBTC is here to help you unlock this technology, one key at a time.</p>
       </div>
     </section>
 
