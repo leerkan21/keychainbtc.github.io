@@ -6,8 +6,9 @@
   <title>KeychainBTC – Bitcoin Made Simple</title>
   <style>
     body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #fff; color: #1a1a1a; }
-    header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
-    nav { display: flex; gap: 1rem; align-items: center; position: relative; }
+    header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; flex-wrap: wrap; position: relative; }
+    .logo { position: absolute; left: 2rem; top: 1rem; width: 40px; height: auto; }
+    nav { display: flex; gap: 1rem; align-items: center; position: relative; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 1rem; text-decoration: none; color: #1a1a1a; font-weight: 500; position: relative; }
     nav a:hover, .dropdown:hover > a { color: #F7931A; }
     .dropdown { position: relative; }
@@ -26,7 +27,7 @@
 </head>
 <body>
   <header>
-    <div><strong>KeychainBTC</strong></div>
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
     <nav>
       <a href="index.html">Home</a>
       <a href="articles.html">Articles</a>
@@ -44,7 +45,6 @@
     </nav>
   </header>
   <main>
-    <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
     <h1>Bitcoin Made Simple</h1>
     <h2>Neighbor to Neighbor</h2>
     <a href="articles.html" class="cta-button">Want to Learn More?</a>
