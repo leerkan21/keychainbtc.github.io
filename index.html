@@ -1,91 +1,57 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'>
-  <title>KeychainBTC – Bitcoin made simple</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <meta name='description' content='KeychainBTC is your friendly guide to understanding Bitcoin easily and safely.'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeychainBTC – Bitcoin Made Simple</title>
   <style>
-     :root {
-       --primary: #F7931A;
-       --dark: #1a1a1a;
-       --light: #ffffff;
-       --gray: #f5f5f7;
-     }
-     *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
-     body{background:var(--light);color:var(--dark);line-height:1.6;}
-     header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--light);position:sticky;top:0;box-shadow:0 2px 4px rgba(0,0,0,.05);z-index:10;}
-     nav a{margin-left:1rem;text-decoration:none;color:var(--dark);font-weight:500;}
-     nav a:hover{color:var(--primary);}
-     .logo{display:flex;align-items:center;font-weight:700;font-size:1.25rem;color:var(--dark);}
-     .logo svg{width:32px;height:32px;margin-right:.5rem;fill:var(--primary);}
-     section{padding:4rem 2rem;max-width:800px;margin:auto;}
-     h1,h2{text-align:center;margin-bottom:1rem;}
-     h1{font-size:2.2rem;}
-     h2{font-size:1.5rem;color:var(--primary);}
-     .cta{display:flex;justify-content:center;margin-top:2rem;}
-     .btn{background:var(--primary);color:var(--light);padding:.75rem 1.5rem;border:none;border-radius:6px;font-size:1rem;cursor:pointer;transition:opacity .2s;}
-     .btn:hover{opacity:.85;}
-     .newsletter{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;}
-     .newsletter input[type=email]{padding:.75rem;border:1px solid #ccc;border-radius:6px;font-size:1rem;flex:1;}
-     .hero-image{width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:2rem;}
-     footer{background:var(--gray);padding:1rem 2rem;text-align:center;font-size:.875rem;margin-top:4rem;}
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #fff; color: #1a1a1a; }
+    header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
+    nav { display: flex; gap: 1rem; align-items: center; position: relative; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #1a1a1a; font-weight: 500; position: relative; }
+    nav a:hover, .dropdown:hover > a { color: #F7931A; }
+    .dropdown { position: relative; }
+    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); min-width: 180px; z-index: 100; }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #1a1a1a; white-space: nowrap; text-decoration: none; }
+    .dropdown-content a:hover { background: #f5f5f7; }
+    .dropdown:hover .dropdown-content { display: block; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; text-align: center; }
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #F7931A; }
+    h2 { font-size: 1.5rem; margin-bottom: 2rem; color: #333; }
+    .cta-button { background: #F7931A; color: #fff; padding: 0.75rem 1.5rem; font-size: 1rem; border: none; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 1.5rem; }
+    .cta-button:hover { background: #e67e00; }
+    .hero-image { max-width: 100%; border-radius: 12px; margin-bottom: 2rem; }
+    footer { background: #f5f5f7; padding: 1rem 2rem; text-align: center; margin-top: 3rem; }
   </style>
 </head>
 <body>
   <header>
-    <a href='index.html' class='logo'>
-      <svg viewBox='0 0 24 24'><path d='M12 2l9 6v12a2 2 0 0 1-2 2h-5v-7h-4v7H5a2 2 0 0 1-2-2V8l9-6z'/><text x='12' y='16' text-anchor='middle' font-size='8' font-family='monospace' fill='#fff'>₿</text></svg>
-      KeychainBTC
-    </a>
+    <div><strong>KeychainBTC</strong></div>
     <nav>
-      <a href='index.html'>Home</a>
-      <a href='articles.html'>Articles</a>
-      <a href='#about'>About</a>
-      <a href='#contact'>Contact</a>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <div class="dropdown">
+        <a href="#">Learn Bitcoin ▾</a>
+        <div class="dropdown-content">
+          <a href="learn-bitcoin.html">Getting Started</a>
+          <a href="wallets.html">Wallets</a>
+          <a href="security.html">Security Basics</a>
+          <a href="glossary.html">Glossary</a>
+        </div>
+      </div>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
-
   <main>
-    <section id='home'>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2560px-Bitcoin.svg.png' alt='Bitcoin Hero' class='hero-image'>
-      <h1>Bitcoin made simple — neighbor to neighbor</h1>
-      <p style='text-align:center;'>Your friendly guide to understanding Bitcoin without the jargon. Learn at your own pace with clear, concise articles and resources.</p>
-      <div class='cta'>
-        <a href='articles.html' class='btn'>Want to Learn More?</a>
-      </div>
-      <div class='newsletter'>
-        <h2>Join the Newsletter</h2>
-        <p>Get new articles straight to your inbox.</p>
-        <form action='#' method='post'>
-          <input type='email' name='EMAIL' placeholder='Your email address' required>
-          <button type='submit' class='btn'>Subscribe</button>
-        </form>
-      </div>
-    </section>
-
-    <section id='about'>
-      <h2>About KeychainBTC</h2>
-      <p>KeychainBTC is run by a long‑time Bitcoin enthusiast who believes that everyone deserves a simple, trustworthy explanation of how Bitcoin works. Staying anonymous keeps the focus on the content, not the personality.</p>
-      <p>Our mission is to break down complex concepts into friendly, short reads you can enjoy over coffee — no cryptic language required.</p>
-    </section>
-
-    <section id='contact'>
-      <h2>Get in Touch</h2>
-      <p>Have questions or suggestions? Send a note below and we’ll reply as soon as possible.</p>
-      <form action='mailto:you@example.com' method='post' enctype='text/plain'>
-        <input type='text' name='name' placeholder='Your name' required style='width:100%;padding:.75rem;margin-bottom:.75rem;border:1px solid #ccc;border-radius:6px;'>
-        <input type='email' name='email' placeholder='Your email' required style='width:100%;padding:.75rem;margin-bottom:.75rem;border:1px solid #ccc;border-radius:6px;'>
-        <textarea name='message' placeholder='Your message' rows='5' required style='width:100%;padding:.75rem;margin-bottom:.75rem;border:1px solid #ccc;border-radius:6px;'></textarea>
-        <button type='submit' class='btn'>Send Message</button>
-      </form>
-    </section>
+    <img class="hero-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
+    <h1>Bitcoin Made Simple</h1>
+    <h2>Neighbor to Neighbor</h2>
+    <a href="articles.html" class="cta-button">Want to Learn More?</a>
   </main>
-
   <footer>
-    © <span id='year'></span> KeychainBTC — All rights reserved.
+    © <span id="year"></span> KeychainBTC — All rights reserved.
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
