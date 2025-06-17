@@ -7,8 +7,8 @@
   <style>
     body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #fff; color: #1a1a1a; }
     header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; flex-wrap: wrap; position: relative; }
-    .branding { position: absolute; left: 2rem; top: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .branding img { width: 28px; height: auto; }
+    .branding { position: absolute; left: 2rem; top: 1rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .branding img { width: 28px; height: auto; cursor: pointer; }
     .branding span { font-weight: bold; color: #F7931A; font-size: 1.1rem; }
     nav { display: flex; gap: 1rem; align-items: center; position: relative; flex-wrap: wrap; justify-content: center; }
     nav a { margin: 0 1rem; text-decoration: none; color: #1a1a1a; font-weight: 500; position: relative; }
@@ -18,10 +18,29 @@
     .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #1a1a1a; white-space: nowrap; text-decoration: none; }
     .dropdown-content a:hover { background: #f5f5f7; }
     .dropdown:hover .dropdown-content { display: block; }
-    main { max-width: 1000px; margin: auto; padding: 2rem; text-align: center; }
+    main { max-width: 1100px; margin: auto; padding: 2rem 1rem; text-align: center; }
+    .hero {
+      padding: 3rem 1rem;
+    }
     .intro-heading { font-size: 3rem; margin-bottom: 0.5rem; font-weight: bold; color: #1a1a1a; }
     .intro-sub { font-size: 1.25rem; color: #F7931A; margin-bottom: 2rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #F7931A; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .feature-box {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .feature-box h3 {
+      color: #F7931A;
+      margin-top: 0;
+    }
     .cta-button { background: #F7931A; color: #fff; padding: 0.75rem 1.5rem; font-size: 1rem; border: none; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 1.5rem; }
     .cta-button:hover { background: #e67e00; }
     footer { background: #f5f5f7; padding: 1rem 2rem; text-align: center; margin-top: 3rem; }
@@ -50,9 +69,26 @@
     </nav>
   </header>
   <main>
-    <div class="intro-heading">Bitcoin – A New Form of Money</div>
-    <div class="intro-sub">A Decentralized Peer-to-Peer System</div>
-    <a href="articles.html" class="cta-button">Want to Learn More?</a>
+    <section class="hero">
+      <div class="intro-heading">Bitcoin – A New Form of Money</div>
+      <div class="intro-sub">A Decentralized Peer-to-Peer System</div>
+      <a href="articles.html" class="cta-button">Want to Learn More?</a>
+    </section>
+
+    <section class="features">
+      <div class="feature-box">
+        <h3>Why Bitcoin?</h3>
+        <p>Bitcoin gives you full control over your money. No banks, no borders, just math and code. Learn why millions are switching to sound digital money.</p>
+      </div>
+      <div class="feature-box">
+        <h3>How It Works</h3>
+        <p>Bitcoin operates through a decentralized network using blockchain technology. Discover the basics behind mining, wallets, and private keys.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Get Started</h3>
+        <p>New to Bitcoin? We’ve got guides to help you choose a wallet, learn to secure your coins, and understand what it really means to be your own bank.</p>
+      </div>
+    </section>
   </main>
   <footer>
     © <span id="year"></span> KeychainBTC — All rights reserved.
