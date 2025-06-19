@@ -3,35 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitcoin Glossary – KeychainBTC</title>
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; background: #fff; color: #1a1a1a; max-width: 800px; margin: auto; }
-    h1 { color: #F7931A; }
-    dt { font-weight: bold; margin-top: 1rem; }
-    dd { margin-bottom: 0.5rem; }
-    a { color: #F7931A; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+  <title>Glossary – KeychainBTC</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Bitcoin Glossary</h1>
-  <dl>
-    <dt>Address</dt>
-    <dd>A string of letters and numbers that represents a destination on the Bitcoin network. Used to send or receive Bitcoin.</dd>
-
-    <dt>Blockchain</dt>
-    <dd>A decentralized, public ledger that records all Bitcoin transactions in chronological order.</dd>
-
-    <dt>Node</dt>
-    <dd>A computer connected to the Bitcoin network that helps validate transactions and blocks.</dd>
-
-    <dt>Private Key</dt>
-    <dd>A secret number that allows you to spend Bitcoin from your wallet. Keep it safe and never share it.</dd>
-
-    <dt>Seed Phrase</dt>
-    <dd>A list of 12 or 24 words that can be used to recover your wallet. This is your backup—store it offline securely.</dd>
-  </dl>
-
-  <p><a href="index.html">← Back to Home</a></p>
+  <header>
+    <a href="index.html" class="branding">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
+      <span>Bitcoin</span>
+    </a>
+    <div class="mobile-nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <div class="dropdown">
+        <a href="#">Learn Bitcoin ▾</a>
+        <div class="dropdown-content">
+          <a href="learn-bitcoin.html">Getting Started</a>
+          <a href="wallets.html">Wallets</a>
+          <a href="security.html">Security Basics</a>
+          <a href="glossary.html">Glossary</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Bitcoin Glossary</h1>
+    <p>Quick reference for key terms and concepts used in the Bitcoin world:</p>
+    <ul>
+      <li><strong>Address:</strong> A string of letters and numbers used to send or receive Bitcoin.</li>
+      <li><strong>Private Key:</strong> A secret code that gives access to your Bitcoin.</li>
+      <li><strong>Public Key:</strong> A code linked to your private key, used to receive Bitcoin.</li>
+      <li><strong>Node:</strong> A computer that supports the Bitcoin network.</li>
+      <li><strong>Block:</strong> A record of Bitcoin transactions added to the blockchain.</li>
+      <li><strong>Blockchain:</strong> A public, immutable ledger of all Bitcoin transactions.</li>
+    </ul>
+  </main>
+  <footer>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="articles.html">Articles</a> |
+      <a href="learn-bitcoin.html">Learn</a> |
+      <a href="wallets.html">Wallets</a> |
+      <a href="glossary.html">Glossary</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="about.html">About</a>
+    </nav>
+    <p>© <span id="year"></span> KeychainBTC — All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

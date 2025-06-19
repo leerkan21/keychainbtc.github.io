@@ -4,46 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles – KeychainBTC</title>
-  <style>
-    body { font-family: system-ui, sans-serif; background: #fff; color: #1a1a1a; margin: 0; padding: 0; }
-    header { background: #f5f5f7; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    nav a { margin-left: 1rem; text-decoration: none; color: #1a1a1a; font-weight: 500; }
-    nav a:hover { color: #F7931A; }
-    .container { max-width: 800px; margin: auto; padding: 2rem; }
-    h1 { text-align: center; color: #F7931A; margin-bottom: 2rem; }
-    article { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem; }
-    article h2 { margin-bottom: 0.5rem; }
-    article a { color: #F7931A; text-decoration: none; font-weight: bold; }
-    article a:hover { text-decoration: underline; }
-    .btn-back { display: inline-block; margin-top: 2rem; background: #F7931A; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; }
-    footer { text-align: center; padding: 1rem; font-size: 0.875rem; background: #f5f5f7; margin-top: 4rem; }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="logo"><strong>KeychainBTC</strong></div>
+    <a href="index.html" class="branding">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
+      <span>Bitcoin</span>
+    </a>
+    <div class="mobile-nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="articles.html">Articles</a>
+      <div class="dropdown">
+        <a href="#">Learn Bitcoin ▾</a>
+        <div class="dropdown-content">
+          <a href="learn-bitcoin.html">Getting Started</a>
+          <a href="wallets.html">Wallets</a>
+          <a href="security.html">Security Basics</a>
+          <a href="glossary.html">Glossary</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <main class="container">
+  <main>
     <h1>Bitcoin Articles</h1>
-
-    <article>
-      <h2><a href="article-bitcoin.html">What is Bitcoin, really? A friendly guide</a></h2>
-      <p>Bitcoin is a digital currency invented in 2009 by an unknown person using the name Satoshi Nakamoto. It allows people to send money over the internet without relying on banks or governments. Learn how Bitcoin works, why it's decentralized, and why only 21 million will ever exist...</p>
-    </article>
-
-    <article>
-      <h2><a href="article-blockchain.html">What is the Blockchain and How Do Keys Work?</a></h2>
-      <p>The blockchain is like a big, public notebook that anyone can read. Every time someone sends or receives Bitcoin, a new line is added to this notebook. Discover how private and public keys make Bitcoin secure, and why decentralization matters...</p>
-    </article>
-
-    <a href="index.html" class="btn-back">← Back to Home</a>
+    <p>Explore our collection of educational articles on Bitcoin, blockchain technology, and decentralized systems.</p>
+    <ul>
+      <li><a href="article-sound-money.html">What Makes Bitcoin Sound Money?</a></li>
+      <li><a href="article-blockchain-basics.html">Understanding Blockchain and Public/Private Keys</a></li>
+    </ul>
   </main>
   <footer>
-    © <span id="year"></span> KeychainBTC — All rights reserved.
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="articles.html">Articles</a> |
+      <a href="learn-bitcoin.html">Learn</a> |
+      <a href="wallets.html">Wallets</a> |
+      <a href="glossary.html">Glossary</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="about.html">About</a>
+    </nav>
+    <p>© <span id="year"></span> KeychainBTC — All rights reserved.</p>
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
