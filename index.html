@@ -1,184 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KeychainBTC – Bitcoin Made Simple</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #fff; color: #1a1a1a; }
-    header { background: #fff; padding: 1rem 2rem; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 10; flex-wrap: wrap; position: relative; }
-    .branding { position: absolute; left: 2rem; top: 1rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
-    .branding img { width: 28px; height: auto; cursor: pointer; }
-    .branding span { font-weight: bold; color: #F7931A; font-size: 1.1rem; }
-
-    .mobile-nav-toggle {
-      display: none;
-      font-size: 2rem;
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-      cursor: pointer;
-      z-index: 100;
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #1a1a1a;
     }
-
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-wrap: wrap;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .branding {
+      position: absolute;
+      left: 2rem;
+      top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .branding img {
+      width: 28px;
+      height: auto;
+      cursor: pointer;
+    }
+    .branding span {
+      font-weight: bold;
+      color: #F7931A;
+      font-size: 1.1rem;
+    }
     nav {
       display: flex;
       gap: 1rem;
       align-items: center;
-      position: relative;
       flex-wrap: wrap;
       justify-content: center;
     }
-
     nav a {
       margin: 0 1rem;
       text-decoration: none;
       color: #1a1a1a;
       font-weight: 500;
-      position: relative;
     }
-
-    nav a:hover, .dropdown:hover > a { color: #F7931A; }
-
-    .dropdown { position: relative; }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      min-width: 180px;
-      z-index: 100;
+    nav a:hover {
+      color: #F7931A;
     }
-    .dropdown-content a {
-      display: block;
-      padding: 0.75rem 1rem;
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .section {
+      margin-top: 3rem;
+    }
+    .section h2 {
       color: #1a1a1a;
-      white-space: nowrap;
-      text-decoration: none;
+      margin-bottom: 1rem;
     }
-    .dropdown-content a:hover { background: #f5f5f7; }
-    .dropdown:hover .dropdown-content { display: block; }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        padding: 1rem;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .mobile-nav-toggle {
-        display: block;
-      }
-
-      header {
-        justify-content: space-between;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: none;
-      }
-
-      .dropdown-content a {
-        padding: 0.5rem;
-      }
-    }
-
-    main { max-width: 1100px; margin: auto; padding: 2rem 1rem; text-align: center; }
-    .hero { padding: 3rem 1rem; }
-    .intro-heading { font-size: 3rem; margin-bottom: 0.5rem; font-weight: bold; color: #1a1a1a; }
-    .intro-sub { font-size: 1.25rem; color: #F7931A; margin-bottom: 2rem; }
-    .features {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
-      text-align: left;
     }
-    .feature-box {
+    .card {
       background: #f9f9f9;
       border-radius: 10px;
       padding: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .feature-box h3 { color: #F7931A; margin-top: 0; }
-    .cta-button {
-      background: #F7931A;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 1.5rem;
+      color: inherit;
     }
-    .cta-button:hover { background: #e67e00; }
-    footer { background: #f5f5f7; padding: 1rem 2rem; text-align: center; margin-top: 3rem; }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #F7931A;
+    }
+    footer {
+      background: #f5f5f7;
+      padding: 1rem 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html" class="branding">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin Logo" />
       <span>Bitcoin</span>
     </a>
-    <div class="mobile-nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="articles.html">Articles</a>
-      <div class="dropdown">
-        <a href="#">Learn Bitcoin ▾</a>
-        <div class="dropdown-content">
-          <a href="learn-bitcoin.html">Getting Started</a>
-          <a href="wallets.html">Wallets</a>
-          <a href="security.html">Security Basics</a>
-          <a href="glossary.html">Glossary</a>
-        </div>
-      </div>
+      <a href="learn-bitcoin.html">Learn Bitcoin</a>
+      <a href="wallets.html">Wallets</a>
+      <a href="glossary.html">Glossary</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <section class="hero">
-      <div class="intro-heading">Bitcoin – A New Form of Money</div>
-      <div class="intro-sub">A Decentralized Peer-to-Peer System</div>
-      <a href="articles.html" class="cta-button">Want to Learn More?</a>
+    <section class="section">
+      <h2>Start Here</h2>
+      <div class="grid">
+        <a href="learn-bitcoin.html" class="card">
+          <h3>Getting Started with Bitcoin</h3>
+          <p>Learn the basics of Bitcoin and how to get started using it today.</p>
+        </a>
+        <a href="wallets.html" class="card">
+          <h3>Bitcoin Wallets</h3>
+          <p>Explore how to store your Bitcoin safely using different types of wallets.</p>
+        </a>
+        <a href="security.html" class="card">
+          <h3>Security Basics</h3>
+          <p>Understand how to secure your funds and avoid common risks in crypto.</p>
+        </a>
+      </div>
     </section>
-    <section class="features">
-      <div class="feature-box">
-        <h3>Why Bitcoin?</h3>
-        <p>Bitcoin gives you full control over your money. No banks, no borders, just math and code. Learn why millions are switching to sound digital money.</p>
-      </div>
-      <div class="feature-box">
-        <h3>How It Works</h3>
-        <p>Bitcoin operates through a decentralized network using blockchain technology. Discover the basics behind mining, wallets, and private keys.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Get Started</h3>
-        <p>New to Bitcoin? We’ve got guides to help you choose a wallet, learn to secure your coins, and understand what it really means to be your own bank.</p>
+
+    <section class="section">
+      <h2>Explore More</h2>
+      <div class="grid">
+        <a href="articles.html" class="card">
+          <h3>Articles</h3>
+          <p>Dive into more detailed articles about Bitcoin's design and economics.</p>
+        </a>
+        <a href="glossary.html" class="card">
+          <h3>Glossary</h3>
+          <p>Look up common Bitcoin and crypto terms in our glossary.</p>
+        </a>
+        <a href="about.html" class="card">
+          <h3>About KeychainBTC</h3>
+          <p>Learn more about our mission and why we're building Bitcoin education.</p>
+        </a>
       </div>
     </section>
   </main>
+
   <footer>
     <nav>
       <a href="index.html">Home</a> |
@@ -192,7 +171,7 @@
     <p>© <span id="year"></span> KeychainBTC — All rights reserved.</p>
   </footer>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
